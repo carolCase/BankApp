@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class MenuB {
-
-     private Scanner scanner=new Scanner(System.in);
+     BankAccount bankAccount=new BankAccount(0, 0);
+     Scanner scanner=new Scanner(System.in);
      Transactions transactions=new Transactions();
     
 
@@ -14,12 +14,12 @@ public class MenuB {
 
         switch(choice){
         case 1: 
-            transactions.withdraw(scanner, double);
+           // transactions.withdraw();
         break;
-        case 2: transactions.deposit(scanner, double);
-        break;
-        case 3: 
-            transactions.showAccountBalance(double);
+        case 2: transactions.deposit();       
+         break;
+        case 3:
+            transactions.showAccountBalance();
         break;
         }
 
