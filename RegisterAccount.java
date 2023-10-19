@@ -7,36 +7,30 @@ public class RegisterAccount{
 ArrayList<BankAccount>listOfClients=new ArrayList<>();
 Scanner scanner=new Scanner(System.in);
 
-    public void addAccount(){           
-        
-    listOfClients.add(new BankAccount(0, 0));
-        System.out.println("Create your 7 digit account");
-         accountNumber=scanner.nextInt();
+    public void addAccount() {           
+  System.out.println("Create your 7 digit account");
+  accountNumber=scanner.nextInt();
+  
+  listOfClients.add(new BankAccount(accountNumber, 0.0));
 
-        for(int i=0; i<listOfClients.size();i++){
-            System.out.println(listOfClients.get(i).getAccountNumber());
-        }
-        
-     }
+   for(int i=0; i<listOfClients.size();i++){
+    System.out.println(listOfClients.get(i).getAccountNumber());
+    }
+    }
 
-     public void loggInToAccount(){
-        System.out.println("Please enter your account number:");
-        int enteredAccountNumber=scanner.nextInt();
-        double balance=0;
-        listOfClients.add(new BankAccount(enteredAccountNumber,balance));
-        for (int i =0; i<listOfClients.size(); i++){
-            if (listOfClients.get(i).getAccountNumber()==enteredAccountNumber)
-            {
-                MenuB ruMenuB =new MenuB();
-                ruMenuB.menuB();
-                
-
-            }
-             else{
-            System.out.println("Account does not exist");
-        }
-        
-     }
-       }
+     
+public void loggInToAccount(){
+    System.out.println("Please enter your account number:");
+    int enteredAccountNumber=scanner.nextInt();
    
+    for (int i =0; i<listOfClients.size(); i++){
+ if (listOfClients.get(i).getAccountNumber()==enteredAccountNumber)
+     {
+        MenuB ruMenuB =new MenuB();
+        ruMenuB.menuB();
+     }
+
+     else{System.out.println("Account does not exist");}
+    }
+     }
 }

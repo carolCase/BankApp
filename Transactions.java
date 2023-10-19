@@ -4,45 +4,54 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Transactions{
-   ArrayList<BankAccount>listOfClients=new ArrayList<>();
-   BankAccount bankAccount =new BankAccount(0, 0);
-   RegisterAccount registerAccount=new RegisterAccount();
-  Scanner scanner=new Scanner(System.in);
+   ArrayList<BankAccount>listOfClients;
+   BankAccount bankAccount = new BankAccount(0, 0);
+   Scanner scanner=new Scanner(System.in);
 
-    double amount;
-    double currentBalance;
-    double balanceAfterDeposit;
-   
-    
-    
-     public double withdraw(Scanner scanner, double amount) {
+
+   public Transactions(ArrayList<BankAccount> listOfClients, BankAccount bankAccount) {
+      this.listOfClients = listOfClients;
+      this.bankAccount = bankAccount;
+  }
+    public Transactions(BankAccount bankAccount2) {
+   }
+   public void menuB(){}
+ 
+
+     public double withdraw() {
+      double amount;
      System.out.println("Enter amount to withdraw:");
      amount = scanner.nextDouble();
        
-if (amount> bankAccount.getBalance()){
-   return amount-bankAccount.getBalance(); } 
-         else {
-    System.out.println("You dont have enough on your account");
-      }
-      return bankAccount.getBalance();
+if (amount>=bankAccount.getBalance()){
+       double newBalance=bankAccount.getBalance()-amount;
+       bankAccount.setBalance(newBalance);
+       return amount;
+} 
+else {
+     System.out.println("You dont have enough on your account");
+     return 0;
    }
+}
      
    
    
    public void deposit(){
       
       System.out.println("Enter the amount to deposit: ");
-      amount = scanner.nextDouble();
+      double amount = scanner.nextDouble();
+
       double currentBalance=bankAccount.getBalance();
       double newBalance=currentBalance+amount;
-      listOfClients.add(new BankAccount(0, newBalance));
+
+      bankAccount.setBalance(newBalance);
       System.out.println("your balance after deposit is: "+ newBalance);
    }
 
    
    
     public void showAccountBalance() {
-       currentBalance=bankAccount.getBalance();
+       double currentBalance=bankAccount.getBalance();
        System.out.println(currentBalance);
      }
 

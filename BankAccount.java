@@ -12,7 +12,7 @@ public class BankAccount {
         return this.accountNumber;       
     }
 
-    public void setAccountNUmber(int newAccountNumber){
+    public void setAccountNumber(int newAccountNumber){
         this.accountNumber=newAccountNumber;
     }
 

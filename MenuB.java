@@ -1,12 +1,25 @@
 import java.util.Scanner;
 
 public class MenuB {
-     BankAccount bankAccount=new BankAccount(0, 0);
-     Scanner scanner=new Scanner(System.in);
-     Transactions transactions=new Transactions();
     
+     Scanner scanner=new Scanner(System.in);
+     Transactions transactions=new Transactions(null);
+     BankAccount bankAccount=new BankAccount(0, 0);
 
-      public void menuB(){
+
+      public MenuB(Transactions transactions, BankAccount bankAccount) {
+      this.transactions = transactions;
+      this.bankAccount = bankAccount;
+  }
+
+   
+
+      public MenuB() {
+    }
+
+
+
+    public void menuB(){
           boolean runMenuB=true;
     
      do{   System.out.println("---Account menu----\n 1. Withdraw money\n 2. Deposit money\n 3. Show balance");
@@ -14,12 +27,12 @@ public class MenuB {
 
         switch(choice){
         case 1: 
-           // transactions.withdraw();
+                transactions.withdraw();
         break;
         case 2: transactions.deposit();       
          break;
         case 3:
-            transactions.showAccountBalance();
+                transactions.showAccountBalance();
         break;
         }
 
