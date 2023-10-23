@@ -5,32 +5,37 @@ import java.util.Scanner;
 
 public class Transactions{
    ArrayList<BankAccount>listOfClients;
-   BankAccount bankAccount = new BankAccount(0, 0);
+   private BankAccount bankAccount;
+   
    Scanner scanner=new Scanner(System.in);
 
 
    public Transactions(ArrayList<BankAccount> listOfClients, BankAccount bankAccount) {
       this.listOfClients = listOfClients;
-      this.bankAccount = bankAccount;
+      this.bankAccount = new BankAccount(0, 0);
   }
     public Transactions(BankAccount bankAccount2) {
    }
    public void menuB(){}
  
 
-     public double withdraw() {
-      double amount;
-     System.out.println("Enter amount to withdraw:");
-     amount = scanner.nextDouble();
+     public void withdraw() {
+   
+      System.out.println("Money? " + bankAccount.getBalance());
+      System.out.println("Enter amount to withdraw:");
+     
+     double amount = scanner.nextDouble();
        
-if (amount>=bankAccount.getBalance()){
-       double newBalance=bankAccount.getBalance()-amount;
-       bankAccount.setBalance(newBalance);
-       return amount;
+if (amount > bankAccount.getBalance()){
+
+  System.out.println("You dont have enough on your account");
 } 
 else {
-     System.out.println("You dont have enough on your account");
-     return 0;
+          double newBalance=bankAccount.getBalance()-amount;
+       bankAccount.setBalance(newBalance);
+       System.out.println("Your new balance is " + bankAccount.getBalance());
+     
+  
    }
 }
      
@@ -43,8 +48,8 @@ else {
 
       double currentBalance=bankAccount.getBalance();
       double newBalance=currentBalance+amount;
-
       bankAccount.setBalance(newBalance);
+
       System.out.println("your balance after deposit is: "+ newBalance);
    }
 

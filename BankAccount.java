@@ -22,7 +22,7 @@ public class BankAccount {
      }
 
     public void setBalance(double newBalance){
-        this.balance=newBalance;
+        this.balance= newBalance;
     }
 
 

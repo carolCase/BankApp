@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class MenuB {
     
      Scanner scanner=new Scanner(System.in);
-     Transactions transactions=new Transactions(null);
+     Transactions transactions=new Transactions(null, null);
      BankAccount bankAccount=new BankAccount(0, 0);
 
 
@@ -27,7 +27,7 @@ public class MenuB {
 
         switch(choice){
         case 1: 
-                transactions.withdraw();
+        transactions.withdraw();
         break;
         case 2: transactions.deposit();       
          break;

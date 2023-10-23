@@ -26,8 +26,8 @@ public void loggInToAccount(){
     for (int i =0; i<listOfClients.size(); i++){
  if (listOfClients.get(i).getAccountNumber()==enteredAccountNumber)
      {
-        MenuB ruMenuB =new MenuB();
-        ruMenuB.menuB();
+        MenuB runMenuB =new MenuB();
+        runMenuB.menuB();
      }
 
      else{System.out.println("Account does not exist");}
