@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class RegisterAccount{
   int accountNumber;
-  double balance;
+  
 ArrayList<BankAccount>listOfClients=new ArrayList<>();
 Scanner scanner=new Scanner(System.in);
 

@@ -14,12 +14,9 @@ public class Transactions{
       this.listOfClients = listOfClients;
       this.bankAccount = new BankAccount(0, 0);
   }
-    public Transactions(BankAccount bankAccount2) {
-   }
-   public void menuB(){}
- 
-
-     public void withdraw() {
+  
+   
+      public void withdraw() {
    
       System.out.println("Money? " + bankAccount.getBalance());
       System.out.println("Enter amount to withdraw:");
